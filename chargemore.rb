@@ -2,11 +2,11 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: employee.rb
 #    Created:       <2015/03/23 20:24:23>
-#    Last Modified: <2015/03/25 20:33:51>
+#    Last Modified: <2015/04/15 19:43:22>
 
 class Employee
 
-  attr_reader :name, :salary
+  attr_reader :name
 
   def name=(name)
     if name == ""
@@ -15,6 +15,20 @@ class Employee
     @name = name
   end
 
+  def print_name
+    puts "Name: #{name}"
+  end
+
+  def initialize(name = "Anonymous", salary = 0.0)
+    self.name = name
+    self.salary = salary
+  end
+
+end
+
+class SalariedEmployee < Employee
+  attr_reader :salary
+
   def salary=(salary)
     if salary < 0
       raise "A salary of #{salary} isn't valid!"
@@ -22,26 +36,10 @@ class Employee
     @salary = salary
   end
 
-  def initialize(name = "Anonymous", salary = 0.0)
-    @name = name
-    @salary = salary
-  end
-
   def print_pay_stub
-    puts "Name: #{@name}"
-    pay_for_period = (@salary / 365.0) * 14
-    formatted_pay = format("%.2f", pay_for_period)
+    print_name
+    pay_for_period = (salary / 365.0) * 14
+    formatted_pay = format("$%.2f", pay_for_period)
     puts "Pay This Period: $#{formatted_pay}"
   end
-
-  # def print_pay_stub
-  #   p @name, @salary
-  # end
 end
-
-class MyClass
-  def initialize(my_param)
-    puts "Got a parameter from 'new': #{my_param}"
-  end
-end
-
