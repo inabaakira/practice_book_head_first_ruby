@@ -2,7 +2,7 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: employee.rb
 #    Created:       <2015/03/23 20:24:23>
-#    Last Modified: <2015/04/22 20:27:23>
+#    Last Modified: <2015/05/15 20:38:48>
 
 class Employee
 
@@ -77,5 +77,17 @@ class HourlyEmployee < Employee
     super(name)
     self.hourly_wage = hourly_wage
     self.hours_per_week = hours_per_week
+  end
+
+  def self.security_guard(name)
+    HourlyEmployee.new(name, 19.25, 30)
+  end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
   end
 end
