@@ -2,7 +2,7 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: vehicle_methods.rb
 #    Created:       <2015/03/11 21:43:56>
-#    Last Modified: <2015/03/11 23:46:35>
+#    Last Modified: <2017/03/06 13:48:22>
 
 def accelerate
   puts "Stepping on the gas"
@@ -19,10 +19,10 @@ def use_headlights(brightness = "low-beam")
   puts "Watch out for deer!"
 end
 
-# sound_horn
-# accelerate
-# use_headlights
-# use_headlights("high-beam")
+sound_horn
+accelerate
+use_headlights
+use_headlights("high-beam")
 
 def mileage(miles_driven, gas_used)
   if gas_used == 0
@@ -32,11 +32,11 @@ def mileage(miles_driven, gas_used)
   miles_driven / gas_used
 end
 
-# trip_mileage = mileage(400, 12)
-# puts "You got #{trip_mileage} MPG on this trip."
+# # trip_mileage = mileage(400, 12)
+# # puts "You got #{trip_mileage} MPG on this trip."
 
-# lifetime_mileage = mileage(11432, 366)
-# puts "This car average #{lifetime_mileage} MPG."
+# # lifetime_mileage = mileage(11432, 366)
+# # puts "This car average #{lifetime_mileage} MPG."
 
-puts mileage(0, 0)
+# puts mileage(0, 0)
 
