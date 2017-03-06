@@ -2,7 +2,7 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: vehicle_methods.rb
 #    Created:       <2015/03/11 21:43:56>
-#    Last Modified: <2017/03/06 13:48:22>
+#    Last Modified: <2017/03/06 14:50:15>
 
 def accelerate
   puts "Stepping on the gas"
@@ -32,11 +32,11 @@ def mileage(miles_driven, gas_used)
   miles_driven / gas_used
 end
 
-# # trip_mileage = mileage(400, 12)
-# # puts "You got #{trip_mileage} MPG on this trip."
+trip_mileage = mileage(400, 12)
+puts "You got #{trip_mileage} MPG on this trip."
 
-# # lifetime_mileage = mileage(11432, 366)
-# # puts "This car average #{lifetime_mileage} MPG."
+lifetime_mileage = mileage(11432, 366)
+puts "This car average #{lifetime_mileage} MPG."
 
-# puts mileage(0, 0)
+puts mileage(0, 0)
 

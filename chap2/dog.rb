@@ -2,7 +2,7 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: dog.rb
 #    Created:       <2015/03/13 16:32:13>
-#    Last Modified: <2015/03/13 16:32:35>
+#    Last Modified: <2017/03/06 18:09:34>
 
 class Dog
 
@@ -33,5 +33,4 @@ class Dog
   def move(destination)
     puts "#{@name} runs to the #{destination}."
   end
-
 end
