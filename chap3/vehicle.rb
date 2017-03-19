@@ -2,7 +2,7 @@
 #-*- mode: ruby-mode; coding: utf-8 -*-
 # file: vehicle.rb
 #    Created:       <2015/03/13 20:38:37>
-#    Last Modified: <2015/03/17 17:41:58>
+#    Last Modified: <2017/03/08 17:16:30>
 
 class Vehicle
 
@@ -29,32 +29,32 @@ end
 
 class Car < Vehicle
 
-  def odometer=(new_value)
-    @banana = new_value
-  end
+  # def odometer=(new_value)
+  #   @banana = new_value
+  # end
 
-  def odometer
-    @banana
-  end
+  # def odometer
+  #   @banana
+  # end
 
-  def gas_used=(new_value)
-    @apple = new_value
-  end
+  # def gas_used=(new_value)
+  #   @apple = new_value
+  # end
 
-  def gas_used
-    @apple
-  end
+  # def gas_used
+  #   @apple
+  # end
 
 end
 
 class Truck < Vehicle
 
-  attr_accessor :cargo
+  # attr_accessor :cargo
 
-  def load_bed(contents)
-    puts "Securing #{contents} in the truck bed."
-    @cargo = contents
-  end
+  # def load_bed(contents)
+  #   puts "Securing #{contents} in the truck bed."
+  #   @cargo = contents
+  # end
 
 end
 
