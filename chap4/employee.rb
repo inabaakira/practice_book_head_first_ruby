@@ -1,6 +1,10 @@
 class Employee
   attr_reader :name
 
+  def initialize(name = "Anonumous")
+    self.name = name
+  end
+
   def name=(name)
     if name == ""
       raise "Name can't be blank!'"
@@ -17,7 +21,7 @@ class SalariedEmployee < Employee
   attr_reader :salary
 
   def initialize(name = "Anonymous", salary = 0.0)
-    self.name = name
+    super(name)
     self.salary = salary
   end
 
@@ -40,7 +44,7 @@ class HourlyEmployee < Employee
   attr_reader :hourly_wege, :hours_per_week
 
   def initialize(name = "Anonymous", hourly_wege = 0.0, hours_per_week = 0.0)
-    self.name = name
+    super(name)
     self.hourly_wege = hourly_wege
     self.hours_per_week = hours_per_week
   end
