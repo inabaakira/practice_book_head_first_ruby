@@ -69,16 +69,13 @@ class HourlyEmployee < Employee
     formatted_pay = format("%.2f", pay_for_period)
     puts "Pay This Period: $#{formatted_pay}"
   end
+
+  def turn_into_cashier
+    self.hourly_wege = 12.75
+    self.hours_per_week = 25
+  end
 end
 
-ivan    = HourlyEmployee.new("Ivan Stokes",     12.75, 25)
-harold  = HourlyEmployee.new("Harold Nguyen",   12.75, 25)
-tamara  = HourlyEmployee.new("Tamara Wells",    12.75, 25)
-susie   = HourlyEmployee.new("Susie Powell",    12.75, 25)
-
-edwin   = HourlyEmployee.new("Edwin Burgess",   10.50, 20)
-ethel   = HourlyEmployee.new("Ethel Harris",    10.50, 20)
-
-angela  = HourlyEmployee.new("Angela Matthews", 19.25, 30)
-stewart = HourlyEmployee.new("Stewart Sanchez", 19.25, 30)
-
+ivan    = HourlyEmployee.new("Ivan Stokes")
+ivan.turn_into_cashier
+ivan.print_pay_stub
