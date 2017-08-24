@@ -63,19 +63,30 @@ class HourlyEmployee < Employee
     @hours_per_week = hours_per_week
   end
 
+  def self.securty_guard(name)
+    HourlyEmployee.new(name, 19.25, 30)
+  end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
+  end
+
   def print_pay_stub
     print_name
     pay_for_period = hourly_wege * hours_per_week * 2
     formatted_pay = format("%.2f", pay_for_period)
     puts "Pay This Period: $#{formatted_pay}"
   end
-
-  def turn_into_cashier
-    self.hourly_wege = 12.75
-    self.hours_per_week = 25
-  end
 end
 
-ivan    = HourlyEmployee.new("Ivan Stokes")
-ivan.turn_into_cashier
+angela = HourlyEmployee.securty_guard("Angela Matthews")
+edwin = HourlyEmployee.janitor("Edwin Burgess")
+ivan = HourlyEmployee.cashier("Ivan Stokes")
+
+angela.print_pay_stub
+edwin.print_pay_stub
 ivan.print_pay_stub
