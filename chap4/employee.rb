@@ -1,9 +1,6 @@
 class Employee
-  attr_reader :name
 
-  def initialize(name = "Anonumous")
-    self.name = name
-  end
+  attr_reader :name
 
   def name=(name)
     if name == ""
@@ -12,24 +9,30 @@ class Employee
     @name = name
   end
 
+  def initialize(name = "Anonumous")
+    self.name = name
+  end
+
   def print_name
     puts "Name: #{name}"
   end
+
 end
 
 class SalariedEmployee < Employee
-  attr_reader :salary
 
-  def initialize(name = "Anonymous", salary = 0.0)
-    super(name)
-    self.salary = salary
-  end
+  attr_reader :salary
 
   def salary=(salary)
     if salary < 0
       raise "A salary of #{salary} isn't valid!'"
     end
     @salary = salary
+  end
+
+  def initialize(name = "Anonymous", salary = 0.0)
+    super(name)
+    self.salary = salary
   end
 
   def print_pay_stub
@@ -41,13 +44,20 @@ class SalariedEmployee < Employee
 end
 
 class HourlyEmployee < Employee
-  attr_reader :hourly_wege, :hours_per_week
 
-  def initialize(name = "Anonymous", hourly_wege = 0.0, hours_per_week = 0.0)
-    super(name)
-    self.hourly_wege = hourly_wege
-    self.hours_per_week = hours_per_week
+  def self.securty_guard(name)
+    HourlyEmployee.new(name, 19.25, 30)
   end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
+  end
+
+  attr_reader :hourly_wege, :hours_per_week
 
   def hourly_wege=(hourly_wege)
     if hourly_wege < 0
@@ -63,16 +73,10 @@ class HourlyEmployee < Employee
     @hours_per_week = hours_per_week
   end
 
-  def self.securty_guard(name)
-    HourlyEmployee.new(name, 19.25, 30)
-  end
-
-  def self.cashier(name)
-    HourlyEmployee.new(name, 12.75, 25)
-  end
-
-  def self.janitor(name)
-    HourlyEmployee.new(name, 10.50, 20)
+  def initialize(name = "Anonymous", hourly_wege = 0.0, hours_per_week = 0.0)
+    super(name)
+    self.hourly_wege = hourly_wege
+    self.hours_per_week = hours_per_week
   end
 
   def print_pay_stub
@@ -81,12 +85,14 @@ class HourlyEmployee < Employee
     formatted_pay = format("%.2f", pay_for_period)
     puts "Pay This Period: $#{formatted_pay}"
   end
+
 end
 
+jane = SalariedEmployee.new("Jane Doe", 50000)
+jane.print_pay_stub
+
 angela = HourlyEmployee.securty_guard("Angela Matthews")
-edwin = HourlyEmployee.janitor("Edwin Burgess")
 ivan = HourlyEmployee.cashier("Ivan Stokes")
 
 angela.print_pay_stub
-edwin.print_pay_stub
 ivan.print_pay_stub
