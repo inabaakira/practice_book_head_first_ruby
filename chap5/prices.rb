@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: prices.rb
 #    Created:       <2017/09/07 22:27:23>
-#    Last Modified: <2017/09/08 00:21:32>
+#    Last Modified: <2017/09/24 13:52:58>
 
 def do_something_with_every_item(array, operation)
   if operation == "total" or operation == "refund"
