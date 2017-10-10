@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: review.rb
 #    Created:       <2017/10/07 12:46:23>
-#    Last Modified: <2017/10/10 19:50:39>
+#    Last Modified: <2017/10/10 20:01:56>
 
 def find_adjective(string)
   words = string.split(" ")
@@ -19,6 +19,9 @@ end
 relevant_lines = lines.find_all { |line| line.include?("Truncated") }
 reviews = relevant_lines.reject { |line| line.include?("--") }
 
-adjectives = reviews.map { |review| find_adjective(review) }
+adjectives = reviews.map do |review|
+  adjective = find_adjective(review)
+  "'#{adjective.capitalize}'"
+end
 
 puts adjectives
