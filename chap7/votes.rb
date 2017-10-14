@@ -2,21 +2,17 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: votes.rb
 #    Created:       <2017/10/12 20:52:31>
-#    Last Modified: <2017/10/12 23:56:30>
+#    Last Modified: <2017/10/14 13:51:58>
 
 lines = []
 File.open("votes.txt") do |file|
   lines = file.readlines
 end
 
-votes = {}
+votes = Hash.new(0)
 lines.each do |line|
   name = line.chomp
-  if votes[name]
-    votes[name] += 1
-  else
-    votes[name] = 1
-  end
+  votes[name] += 1
 end
 
 p votes
