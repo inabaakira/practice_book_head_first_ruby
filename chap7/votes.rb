@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: votes.rb
 #    Created:       <2017/10/12 20:52:31>
-#    Last Modified: <2017/10/14 18:40:51>
+#    Last Modified: <2017/10/15 03:05:08>
 
 lines = []
 File.open("votes.txt") do |file|
@@ -16,4 +16,6 @@ lines.each do |line|
   votes[name] += 1
 end
 
-p votes
+votes.each do |name, count|
+  puts "#{name}: #{count}"
+end
