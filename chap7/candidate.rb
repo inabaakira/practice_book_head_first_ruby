@@ -2,11 +2,11 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: votes.rb
 #    Created:       <2017/10/12 20:52:31>
-#    Last Modified: <2017/10/15 12:51:38>
+#    Last Modified: <2017/10/15 13:09:36>
 
 class Candidate
   attr_accessor :name, :age, :occupation, :hobby, :birthplace
-  def initialize(name, options)
+  def initialize(name, options = {})
     self.name = name
     self.age = options[:age]
     self.occupation = options[:occupation]
@@ -23,6 +23,5 @@ def print_summary(candidate)
   puts "Birthplace: #{candidate.birthplace}"
 end
 
-p Candidate.new("Carl Barnes",
-                :age => 49, :hobby => "Attorney", :birthplace => "Miami")
-p Candidate.new("Amy Nguyen", age: 37, occupation: "Engineer", hobby: "Lacrosse")
+p Candidate.new("Carl Barnes")
+p Candidate.new("Carl Barnes", occupation: "Attorney")
