@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: votes.rb
 #    Created:       <2017/10/12 20:52:31>
-#    Last Modified: <2017/10/15 12:34:02>
+#    Last Modified: <2017/10/15 12:38:40>
 
 class Candidate
   attr_accessor :name, :age, :occupation, :hobby, :birthplace
@@ -24,5 +24,5 @@ def print_summary(candidate)
 end
 
 candidate = Candidate.new("Carl Barnes",
-                          {:age => 49, :hobby => "Attorney", :birthplace => "Miami"})
+                          :age => 49, :hobby => "Attorney", :birthplace => "Miami")
 p candidate
