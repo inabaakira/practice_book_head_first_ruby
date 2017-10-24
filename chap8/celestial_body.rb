@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: celestial_body.rb
 #    Created:       <2017/10/16 12:11:10>
-#    Last Modified: <2017/10/22 18:24:59>
+#    Last Modified: <2017/10/22 18:48:45>
 
 class CelestialBody
   attr_accessor :type, :name
@@ -14,9 +14,9 @@ bodies = Hash.new do |hash, key|
   hash[key] = body
 end
 
-p bodies['Europa']
-p bodies['Europa']
+bodies['Mars'].name = 'Mars'
+bodies['Europa'].name = 'Europa'
 bodies['Europa'].type = 'moon'
-p bodies['Europa']
+bodies['Venus'].name = 'Venus'
 
-p bodies['Venus']
+p bodies
