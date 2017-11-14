@@ -2,9 +2,12 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: steak.rb
 #    Created:       <2017/11/14 21:51:14>
-#    Last Modified: <2017/11/14 23:02:26>
+#    Last Modified: <2017/11/14 23:41:07>
 
 class Steak
+
+  include Comparable
+
   GRADE_SCORES = {"Prime" => 3, "Choice" => 2, "Select" => 1}
 
   attr_accessor :grade
@@ -20,10 +23,17 @@ class Steak
   end
 end
 
-first_steak = Steak.new
-first_steak.grade = "Prime"
-second_steak = Steak.new
-second_steak.grade = "Choice"
+prime = Steak.new
+prime.grade = "Prime"
+choice = Steak.new
+choice.grade = "Choice"
+select = Steak.new
+select.grade = "Select"
 
-puts first_steak <=> second_steak
-puts second_steak <=> first_steak
+puts "prime > choice: #{prime > choice}"
+puts "prime < select: #{prime < select}"
+puts "select == select: #{select == select}"
+puts "select <= select: #{select <= select}"
+puts "select >= choice: #{select >= choice}"
+print "choice.between?(select, prime): "
+puts choice.between?(select, prime)
