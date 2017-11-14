@@ -2,14 +2,15 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: steak.rb
 #    Created:       <2017/11/14 21:51:14>
-#    Last Modified: <2017/11/14 21:55:10>
+#    Last Modified: <2017/11/14 22:19:52>
 
 class Steak
+  GRADE_SCORES = {"Prime" => 3, "Choice" => 2, "Select" => 1}
+
   attr_accessor :grade
 
   def >(other)
-    grade_scores = {"Prime" => 3, "Choice" => 2, "Select" => 1}
-    grade_scores[grade] > grade_scores[other.grade]
+    GRADE_SCORES[grade] > GRADE_SCORES[other.grade]
   end
 end
 
