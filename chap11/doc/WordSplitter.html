@@ -97,6 +97,9 @@
 
   <section class="description">
     
+<p>this class allows you to perform various operations on the words in a
+string.</p>
+
   </section>
 
   
@@ -124,7 +127,7 @@
 
         <div class="method-description">
         
-        
+        <p>The string to split into words.</p>
         
         </div>
       </div>
@@ -152,13 +155,13 @@
 
         <div class="method-description">
           
-          
+          <p>Passes each word in the string to a block, one at a time.</p>
           
           
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File word_splitter.rb, line 9</span>
+            <pre><span class="ruby-comment"># File word_splitter.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
   <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">word</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">word</span>
