@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: array.rb
 #    Created:       <2017/11/23 15:53:49>
-#    Last Modified: <2017/11/23 16:00:16>
+#    Last Modified: <2017/11/25 14:47:32>
 
 array = [10, 5, 7, 3, 9]
 
