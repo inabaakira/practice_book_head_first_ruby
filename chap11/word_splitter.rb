@@ -7,6 +7,12 @@ class WordSplitter
 
   include Enumerable
 
+  # Creates a new instance with its string
+  # attribute set to the given string.
+  def initialize(string)
+    self.string = string
+  end
+
   # The string to split into words.
   attr_accessor :string
 
