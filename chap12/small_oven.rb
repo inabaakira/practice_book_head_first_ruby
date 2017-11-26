@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: small_oven.rb
 #    Created:       <2017/11/26 23:15:59>
-#    Last Modified: <2017/11/26 23:24:04>
+#    Last Modified: <2017/11/27 00:09:23>
 
 class SmallOven
   attr_accessor :contents
@@ -19,24 +19,18 @@ class SmallOven
 
   def bake
     unless @state == "on"
-      return "You need to turn the oven on first!"
+      raise "You need to turn the oven on first!"
     end
 
     if @contents == nil
-      return "There's nothing in the oven!"
+      raise "There's nothing in the oven!"
     end
 
     "golden-brown #{contents}"
   end
 end
 
-# dinner = ['turkey', 'casserole', 'pie']
-# dinner = ['turkey', nil, 'pie']
-dinner = ['turkey', 'casserole, 'pie']
 oven = SmallOven.new
-# oven.turn_on
-oven.turn_off
-dinner.each do |item|
-  oven.contents = item
-  puts "Serving #{oven.bake}."
-end
+oven.turn_on
+oven.contents = nil
+puts "Serving #{oven.bake}"
