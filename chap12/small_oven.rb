@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: small_oven.rb
 #    Created:       <2017/11/26 23:15:59>
-#    Last Modified: <2017/11/27 00:15:30>
+#    Last Modified: <2017/12/02 20:38:01>
 
 class SmallOven
   attr_accessor :contents
@@ -34,6 +34,10 @@ dinner = ['turkey', nil, 'pie']
 oven = SmallOven.new
 oven.turn_on
 dinner.each do |item|
-  oven.contents = item
-  puts "Serving #{oven.bake}"
+  begin
+    oven.contents = item
+    puts "Serving #{oven.bake}"
+  rescue
+    puts "Error: There's nothing in the oven!"
+  end
 end
