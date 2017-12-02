@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: small_oven.rb
 #    Created:       <2017/11/26 23:15:59>
-#    Last Modified: <2017/12/02 20:38:01>
+#    Last Modified: <2017/12/02 20:45:52>
 
 class SmallOven
   attr_accessor :contents
@@ -32,7 +32,7 @@ end
 
 dinner = ['turkey', nil, 'pie']
 oven = SmallOven.new
-oven.turn_on
+oven.turn_off
 dinner.each do |item|
   begin
     oven.contents = item
