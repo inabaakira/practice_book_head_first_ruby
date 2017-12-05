@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: small_oven.rb
 #    Created:       <2017/11/26 23:15:59>
-#    Last Modified: <2017/12/05 23:44:09>
+#    Last Modified: <2017/12/05 23:47:13>
 
 class OvenOffError < StandardError
 end
@@ -42,8 +42,8 @@ begin
   oven.turn_on
   oven.contents = nil
   puts "Serving #{oven.bake}."
-  oven.turn_off
 rescue OvenEmptyError => error
   puts "Error: #{error.message}"
+ensure
   oven.turn_off
 end
