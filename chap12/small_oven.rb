@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: small_oven.rb
 #    Created:       <2017/11/26 23:15:59>
-#    Last Modified: <2017/12/04 19:15:56>
+#    Last Modified: <2017/12/05 23:33:37>
 
 class OvenOffError < StandardError
 end
@@ -47,5 +47,6 @@ dinner.each do |item|
     puts "Error: #{error.message}"
   rescue OvenOffError => error
     oven.turn_on
+    retry
   end
 end
