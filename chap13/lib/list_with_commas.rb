@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: list_with_commas.rb
 #    Created:       <2017/12/08 20:18:45>
-#    Last Modified: <2017/12/12 20:24:06>
+#    Last Modified: <2017/12/12 20:29:38>
 
 class ListWithCommas
   attr_accessor :items
@@ -15,6 +15,10 @@ class ListWithCommas
     "#{other_items}, #{last_item}"
   end
 end
+
+one_subject = ListWithCommas.new
+one_subject.items = ['a rodeo clown']
+puts "A photo of #{one_subject.join}"
 
 two_subjects = ListWithCommas.new
 two_subjects.items = ['my parent', 'a rodeo clown']
