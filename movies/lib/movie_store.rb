@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: movie_store.rb
 #    Created:       <2017/12/19 11:51:58>
-#    Last Modified: <2017/12/19 11:55:02>
+#    Last Modified: <2017/12/19 12:50:41>
 
 require 'yaml/store'
 
@@ -18,6 +18,12 @@ class MovieStore
         movie.id = highest_id + 1
       end
       @store[movie.id] = movie
+    end
+  end
+
+  def all
+    @store.transaction do
+      @store.roots.map { |id| @store[id] }
     end
   end
 end
