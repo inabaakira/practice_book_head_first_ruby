@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: app.rb
 #    Created:       <2017/12/14 20:51:22>
-#    Last Modified: <2017/12/19 13:00:57>
+#    Last Modified: <2017/12/19 14:34:56>
 
 require 'sinatra'
 require 'movie'
@@ -26,4 +26,8 @@ post ('/movies/create') do
   @movie.year = params['year']
   store.save(@movie)
   redirect '/movies/new'
+end
+
+get('/movies/:id') do
+  "Received a request for movie ID: #{params['id']}"
 end
