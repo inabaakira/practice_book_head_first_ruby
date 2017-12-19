@@ -2,7 +2,7 @@
 #-*- mode: ruby; coding: utf-8 -*-
 # file: app.rb
 #    Created:       <2017/12/14 20:51:22>
-#    Last Modified: <2017/12/19 14:34:56>
+#    Last Modified: <2017/12/19 20:07:00>
 
 require 'sinatra'
 require 'movie'
@@ -29,5 +29,7 @@ post ('/movies/create') do
 end
 
 get('/movies/:id') do
-  "Received a request for movie ID: #{params['id']}"
+  id = params['id'].to_i
+  @movie = store.find(id)
+  erb :show
 end
